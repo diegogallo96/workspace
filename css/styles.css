@@ -9,6 +9,17 @@
   font-weight: bold;
 }
 
+
+.form-floating {
+  margin-bottom: 5%;
+}
+
+.mt-5{
+  text-align: center;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
 nav a {
   text-decoration: none;
 }
