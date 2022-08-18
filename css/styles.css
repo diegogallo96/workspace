@@ -9,6 +9,9 @@
   font-weight: bold;
 }
 
+.alert_text {
+  color: red;
+}
 
 .form-floating {
   margin-bottom: 5%;
