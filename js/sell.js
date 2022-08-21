@@ -147,3 +147,19 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 });
+
+let usuario = localStorage.getItem('user');
+
+if (usuario == null) {
+    this.location.href = "login.html";
+    alert("No iniciaste sesión");
+}else{
+    document.getElementById('usuario').innerHTML = 'Sesión de ' + '<b>' + usuario + '</b>';
+}
+
+    // Cerrar sesion
+
+    document.getElementById('Exit').addEventListener('click', ()=> {
+        localStorage.clear();
+        this.location.href = "login.html"
+    });

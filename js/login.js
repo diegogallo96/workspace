@@ -20,6 +20,7 @@ function registrarse () {
         alerta1.innerHTML = "ingresa tu contraseña"
     }
     else {
+        localStorage.setItem('user',email);
         location.href="index.html";
     }
     }
