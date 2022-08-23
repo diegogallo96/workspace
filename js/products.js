@@ -1,9 +1,14 @@
 //array donde se cargarán los datos recibidos:
 let productsArray = [];
 
+//Funcion que muestra el subtitulo con la categoría correspondiente
+function showSubtitle(array){
+document.getElementById("producto").innerHTML += "Verás aquí todos los productos de la categoría " + array.catName;
+};
+
 //función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
 function showProductsList(array){
-    let htmlContentToAppend = "";
+let htmlContentToAppend = "";
 
     for(let i = 0; i < array.products.length; i++){ 
         let product = array.products[i];
@@ -16,7 +21,8 @@ function showProductsList(array){
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <div class="mb-1">
-                        <h4>`+ product.name +`</h4> 
+                        <h4>`+ product.name + " - " + product.currency + " " + product.cost +`</h4> 
+                        
                         <p> `+ product.description +`</p> 
                         </div>
                         <small class="text-muted">` + product.soldCount + ` artículos</small> 
@@ -28,6 +34,7 @@ function showProductsList(array){
         `
         document.getElementById("prod-list-container").innerHTML = htmlContentToAppend; 
     }
+    
 }
 
 
@@ -49,6 +56,20 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function(e){
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
+        if (resultObj.status === "ok")
+        {
+            productsArray = resultObj.data;
+            showProductsList(productsArray);
+            showSubtitle(productsArray);
+        }
+    });
+});
+
+    //Verificacion de ingreso de sesión
+
 let usuario = localStorage.getItem('user');
 
 if (usuario == null) {
@@ -60,7 +81,7 @@ if (usuario == null) {
 
     // Cerrar sesion
 
-    document.getElementById('Exit').addEventListener('click', ()=> {
-        localStorage.clear();
-        this.location.href = "login.html"
-    });
+document.getElementById('Exit').addEventListener('click', ()=> {
+    localStorage.clear();
+    this.location.href = "login.html"
+});

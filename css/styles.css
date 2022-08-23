@@ -23,6 +23,11 @@
   margin-right: 35%;
 }
 
+.usuario{
+  text-decoration: underline;
+  color: gray;
+}
+
 nav a {
   text-decoration: none;
 }
