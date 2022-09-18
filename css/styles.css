@@ -8,6 +8,33 @@
 .jumbotron .display-4 {
   font-weight: bold;
 }
+.normal{
+  font-weight:normal;
+}
+
+.fuerte{
+  font-weight: 600;
+}
+
+.divmargin {
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.divmargin2 {
+  margin-left: 5%;
+  border-width: 0.2px;
+  padding: 10px;
+  border-style:groove;
+  border-color: gray;
+  margin-right: 10%;
+}
+
+.imag {
+  width: 18%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
 
 .alert_text {
   color: red;
