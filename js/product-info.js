@@ -1,6 +1,11 @@
 let productsInfo = [];
 let comentarios = [];
 
+function relatedProds (prod) {
+    localStorage.setItem("prodID",prod);
+    window.location = "product-info.html";
+};
+
 //Funcion que muestra información acerca del producto
 function showData (data) {
 let info = document.getElementById('product_information');
@@ -20,6 +25,19 @@ for(let i = 0; i < data.images.length; i++){
 }
 info.innerHTML = htmlContentToAppend;
 };
+
+function mostrarRelatedProducts (data){
+    let relatedProds = document.getElementById('relatedProducts');
+
+    for (let i = 0; i < data.relatedProducts.length; i++) {
+        relatedProds.innerHTML += `
+        <div onclick="relatedProds(${data.relatedProducts[i].id})" class="divmargin">
+            <img src="` + data.relatedProducts[i].image + `" alt="product image" class="imag">
+            <p>${data.relatedProducts[i].name}</p>
+        </div>
+    `
+    }
+}
 
 function mostrarComentarios (comentarios) {
 let info =  document.getElementById('comentarios');
@@ -63,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         {
             productsInfo = resultObj.data;
             showData(productsInfo);
+            mostrarRelatedProducts(productsInfo);
         }
     });
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
