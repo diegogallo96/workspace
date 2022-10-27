@@ -16,6 +16,37 @@
   font-weight: 600;
 }
 
+.tab {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  }
+
+table {
+  width: 70%;
+}
+
+.title_tab{
+  text-align: center;
+  margin-top: 15px;
+}
+
+.title_tab_2{
+  text-align: left;
+  margin-top: 15px;
+}
+
+th, td {
+  width: 70%;
+  text-align: center;
+  border: 2px solid #085797;
+  padding: 5px;
+}
+
+.imag_tab {
+  width: 100%;
+}
+
 .divmargin {
   margin-left: 5%;
   margin-top: 5%;
