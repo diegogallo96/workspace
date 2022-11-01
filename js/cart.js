@@ -1,10 +1,3 @@
-
-  
-  
-
-
-
-
 function finalCost (event, data){
 
     let cost = data;

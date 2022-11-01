@@ -44,6 +44,17 @@ th, td {
   width: 30%;
 }
 
+.divperfil{
+  width: 40%;
+  margin: auto;
+  padding: 10px;
+}
+
+.divperfil2{
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+}
 .divmargin {
   margin-left: 5%;
   margin-top: 5%;
